@@ -6,7 +6,7 @@ const img =
 
 boxes.forEach((box) => {
   box.addEventListener("click", () => {
-    const imgTag = `<img src="${img}" />`;
+    const imgTag = `<img src="${img}" alt="Jeff Goldblum"/>`;
     // box.innerHTML = imgTag;
 
     if (box.innerHTML === "") {
@@ -16,3 +16,12 @@ boxes.forEach((box) => {
     }
   });
 });
+
+// boxes.forEach((box) => {
+//   container.appendChild(box);
+// });
+
+// for (let i = 0; i < boxes.length; i++) {
+//   const div = document.createElement("div");
+//   container.appendChild(div);
+// }
