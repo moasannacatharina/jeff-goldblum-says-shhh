@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+}
+
+@keyframes backgroundColors {
+  0% {
+    background: #ee6055;
+  }
+  25% {
+    background: #60d394;
+  }
+  50% {
+    background: #aaf683;
+  }
+  75% {
+    background: #ffd97d;
+  }
+  100% {
+    background: #ff9b85;
+  }
+}
+body {
+  /* animation-name: backgroundColors;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate; */
+  background-color: #ff9b85;
+}
+
+.container {
+  display: grid;
+  width: 100%;
+  max-width: 1400px;
+  padding: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  row-gap: 1px;
+  column-gap: 1px;
+}
+
+div {
+  /* background-color: black; */
+  width: 100px;
+  height: 100px;
+  margin: 0;
+  object-fit: fill;
+  border-radius: 50%;
+}
+
+img {
+  width: 100%;
+  border-radius: 50%;
+}
