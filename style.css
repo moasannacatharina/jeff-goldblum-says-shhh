@@ -2,6 +2,8 @@
   --delay: 0;
   --duration: 2s;
   --iterations: 1;
+  --accent-color: #15bd83;
+  --accent-color-darker: #12ae78;
 }
 
 * {
@@ -74,28 +76,27 @@ body {
 
 main {
   width: 100%;
-  min-height: 90vh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.border {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 30px;
-  display: flex;
-  padding: 20px;
-  z-index: 1;
-  justify-content: space-around;
+h2 {
+  text-align: center;
 }
 
-.border img {
-  width: 50px;
-  height: 50px;
+.textbox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  font-size: 4vw;
+  background-color: var(--accent-color-darker);
+  color: white;
+  text-align: center;
+  width: 100%;
 }
 
 .spin {
@@ -117,8 +118,8 @@ main {
   border: 2px solid rgb(218, 142, 177);
   display: none;
   position: absolute;
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   margin: 0;
   object-fit: fill;
 }
@@ -160,6 +161,7 @@ main {
   color: #fff;
   white-space: nowrap;
   cursor: default;
+  margin: 1rem;
 }
 
 /*** Buttons  ***/
@@ -178,16 +180,18 @@ input[type="reset"] {
 
 button {
   margin: 10px;
-  width: 70%;
+  width: 50%;
   padding: 2rem;
-  background-color: rgb(255, 255, 255);
-  color: black;
-  box-shadow: 0px 4px 6px 1px #3c3838a6;
+  box-shadow: 0px 4px 1px 4px #12ae78;
   border-radius: 50%;
+  background-color: var(--accent-color);
+  color: white;
+  font-size: 20px;
+  transition: 0.2s ease;
 }
 
 button:hover {
-  box-shadow: 0px 1px 3px 0px #0000008a;
+  box-shadow: 0px 1px 3px 1px #0a6344;
 }
 
 footer {
@@ -195,4 +199,13 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 53%;
+  width: 100%;
 }

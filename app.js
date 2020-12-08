@@ -12,19 +12,7 @@ main.addEventListener("click", (e) => {
 
   img.style.top = e.offsetY + "px";
   img.style.left = e.offsetX + "px";
-});
-
-const border = document.querySelector(".border");
-const borderImgs = border.querySelectorAll("img");
-
-borderImgs.forEach((img) => {
-  img.addEventListener("click", () => {
-    if (img.classList != "spin") {
-      img.classList.add("spin");
-    } else {
-      img.classList.remove("spin");
-    }
-  });
+  textBox.innerHTML = "";
 });
 
 const slideImg = document.querySelector(".slide");
@@ -48,23 +36,29 @@ const imgUrl =
 // console.log(h1);
 
 const footer = document.querySelector("footer");
-const choices = ["I will keep talking", "I just wanna sing", "I will shut up"];
+const choices = [
+  "I will keep talking",
+  "I just wanna sing",
+  "Fine! I'll shut up",
+];
 
 choices.forEach((choice) => {
-  template = `<button>${choice}</button>`;
-  footer.innerHTML += template;
+  const btnContainer = document.querySelector(".button-container");
+  const template = `<button class="btn">${choice}</button>`;
+  btnContainer.innerHTML += template;
 });
 
-const buttons = footer.querySelectorAll("button");
+const buttons = document.querySelectorAll("button");
+const textBox = main.querySelector(".textbox");
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     if (button.textContent === "I will keep talking") {
-      window.alert("NO!");
+      textBox.innerHTML = `<h1>No! Please don't.</h1>`;
     } else if (button.textContent === "I just wanna sing") {
-      window.alert("Oh my god. Stop.");
+      textBox.innerHTML = `<h1>Oh my god. Stop.</h1>`;
     } else {
-      window.alert("Finally! Good job!");
+      textBox.innerHTML = `<h1>Finally! Thanks.</h1>`;
     }
   });
 });

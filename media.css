@@ -1,0 +1,18 @@
+@media screen and (min-width: 700px) {
+  .button-container {
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  button {
+    width: 22%;
+    margin: 2rem;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .reveal-text {
+    font-size: 12vw;
+  }
+}
