@@ -1,35 +1,43 @@
 :root {
   --delay: 0;
-  --duration: 2s;
+  --duration: 3s;
   --iterations: 1;
-  --accent-color: #15bd83;
-  --accent-color-darker: #12ae78;
+  --button-color: #15bd83;
+  --button-color-darker: #12ae78;
+  --headline-font: "Fredoka One";
+  --bg-color: #6877cf;
 }
 
 * {
   box-sizing: border-box;
+  margin: 0;
+}
+
+@font-face {
+  font-family: "Fredoka One";
+  src: url("/fonts/FredokaOne-Regular.woff2") format("woff2"),
+    url("/fonts/FredokaOne-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Century Gothic";
+  src: url("/fonts/CenturyGothic.woff2") format("woff2"),
+    url("/fonts/CenturyGothic.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Century Gothic";
+  src: url("/fonts/CenturyGothic-Bold.woff2") format("woff2"),
+    url("/fonts/CenturyGothic-Bold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
 }
 
 /**** Keyframes  ***/
-
-@keyframes background-colors {
-  0% {
-    background: #ee6055;
-  }
-  25% {
-    background: #60d394;
-  }
-  50% {
-    background: #aaf683;
-  }
-  75% {
-    background: #ffd97d;
-  }
-  100% {
-    background: #ff9b85;
-    /* background: url("https://www.geekwiththat.com/wp-content/uploads/2017/06/1898130_285125985022594_7169533043432192446_n.png"); */
-  }
-}
 
 @keyframes clip-text {
   from {
@@ -40,63 +48,81 @@
   }
 }
 
-@keyframes spin {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-  /* 50% {
-    transform: rotate(0);
-  }
-  75% {
-    transform: rotate(-90deg) scale(1.5);
-  } */
-}
-
-@keyframes slide {
+@keyframes button-slide {
   from {
     transform: translateX(-400px);
   }
   to {
-    transform: translateX(calc(100vw + 400px));
+    transform: translateX(100vw);
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(-50%) translateY(-30%);
+  }
+  to {
+    transform: translateX(-50%) translateY(-100%);
   }
 }
 
 body {
-  animation-name: background-colors;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  /* background-color: #ff9b85; */
+  background-color: var(--bg-color);
   color: white;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Century Gothic", Arial, Helvetica, sans-serif;
+  object-fit: cover;
 }
 
-main {
+main,
+.intro {
   width: 100%;
-  min-height: 80vh;
+  min-height: 45vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 10px;
+}
+
+.front-image {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 100vh;
+}
+
+h1 {
+  letter-spacing: 3px;
 }
 
 h2 {
   text-align: center;
+  z-index: 999;
+  font-size: 20px;
+  margin: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .textbox {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  font-size: 4vw;
-  background-color: var(--accent-color-darker);
-  color: white;
+  padding: 2rem;
+  padding-top: 2.5rem;
+  transform: translateX(-50%) translateY(-100%);
+  font-size: 38px;
+  background-color: var(--bg-color);
   text-align: center;
   width: 100%;
+  height: 50%;
+  font-family: var(--headline-font), Arial, sans-serif;
+  z-index: 1000;
+  display: none;
+  justify-content: center;
+  align-items: center;
 }
 
 .spin {
@@ -104,42 +130,17 @@ h2 {
   z-index: 2;
 }
 
-.slide {
-  animation: slide 5s linear 3;
-  position: fixed;
-  top: 50%;
-  left: 0;
-  transform: translateX(-100%);
-}
-
-/**** Image on click  *****/
+/**** Image on mousemove *****/
 .click-image {
   border-radius: 50%;
-  border: 2px solid rgb(218, 142, 177);
   display: none;
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  margin: 0;
-  object-fit: fill;
-}
-
-/**** info box bottom left  ****/
-.info-box {
   position: fixed;
-  bottom: 0;
-  right: 0;
-  margin: 1rem;
-  background-color: white;
-  border: 2px solid lightpink;
-  color: black;
-  padding: 1rem;
-  width: 200px;
-  height: 100px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 90px;
+  height: 90px;
+  margin: 0;
+  object-fit: cover;
+  z-index: 2800;
+  pointer-events: none;
 }
 
 /**** headline text reveal  ****/
@@ -156,17 +157,19 @@ h2 {
   --animation-delay: var(--delay, 0);
   --animation-duration: var(--duration, 800ms);
   --animation-iterations: var(--iterations, 1);
-  font-size: 20vw;
+  font-size: 24vw;
   animation-name: clip-text;
-  color: #fff;
+  color: rgb(220, 188, 238);
   white-space: nowrap;
   cursor: default;
   margin: 1rem;
+  font-family: "Fredoka One";
 }
 
 /*** Buttons  ***/
 
 button,
+.btn,
 input[type="submit"],
 input[type="reset"] {
   background: none;
@@ -178,34 +181,63 @@ input[type="reset"] {
   outline: inherit;
 }
 
-button {
+.btn {
   margin: 10px;
   width: 50%;
   padding: 2rem;
-  box-shadow: 0px 4px 1px 4px #12ae78;
+  background-color: var(--button-color);
+  box-shadow: 0px 4px 1px 4px var(--button-color-darker);
   border-radius: 50%;
-  background-color: var(--accent-color);
+  cursor: pointer;
   color: white;
   font-size: 20px;
   transition: 0.2s ease;
 }
 
-button:hover {
+.btn:hover {
   box-shadow: 0px 1px 3px 1px #0a6344;
 }
 
-footer {
+.options {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  display: none;
+  margin: 1rem;
 }
 
+.options p {
+  margin: 1rem;
+}
 .button-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  cursor: pointer;
   border-radius: 53%;
   width: 100%;
+}
+
+.secret {
+  position: relative;
+  display: none;
+  margin: 10rem;
+  width: 100%;
+  height: 500px;
+}
+.hidden {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  animation: button-slide 5s linear infinite;
+  margin: 10px;
+  padding: 10px;
+  background-color: var(--button-color);
+  box-shadow: 0px 4px 1px 4px var(--button-color-darker);
+  border-radius: 50%;
+  cursor: pointer;
+  color: white;
+  transition: 0.2s ease;
 }

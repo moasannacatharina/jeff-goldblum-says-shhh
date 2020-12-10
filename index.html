@@ -6,26 +6,56 @@
     <title>Jeff Goldblum says shhh</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="media.css" />
+    <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
   </head>
   <body>
-    <main>
-      <h1 class="reveal-text">shhh!</h1>
-      <h2>I've heard you have trouble being quiet.</h2>
-      <img
-        src="https://www.geekwiththat.com/wp-content/uploads/2017/06/1898130_285125985022594_7169533043432192446_n.png"
-        class="click-image"
-      />
-      <!-- <img src="" class="slide" /> -->
+    <img
+      src="/img/jeff-goldblum-portrait-mini.jpg"
+      class="click-image"
+      alt="Actor Jeff Goldblum shushing"
+    />
 
-      <!-- <div class="info-box">
-        <span>Click anywhere!</span>
-      </div> -->
-      <div class="textbox"></div>
+    <picture>
+      <source
+        srcset="/img/jeff-landscape.png"
+        media="(min-width: 800px)"
+        class="front-image"
+        alt="Actor Jeff Goldblum shushing"
+      />
+      <source
+        srcset="img/jeff-portrait.jpg"
+        media="(min-width: 400px)"
+        class="front-image"
+        alt="Actor Jeff Goldblum shushing"
+      />
+      <img
+        src="/img/jeff-portrait.jpg"
+        class="front-image"
+        alt="Actor Jeff Goldblum shushing"
+      />
+    </picture>
+    <main>
+      <section class="intro">
+        <h1 class="reveal-text">shhh!</h1>
+        <h2>I've heard you have trouble being quiet.</h2>
+      </section>
+
+      <section class="options">
+        <div class="textbox"></div>
+        <h2>What are you going to do?</h2>
+        <div class="button-container"></div>
+        <p>psst! want a hint? scroll down.</p>
+      </section>
+      <div class="secret">
+        <button class="hidden">
+          click me
+          <audio>
+            <source src="sounds/shutup.mp3" />
+          </audio>
+        </button>
+      </div>
     </main>
-    <footer>
-      <h2>What are you gonna do?</h2>
-      <div class="button-container"></div>
-    </footer>
+    <script src="confetti.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
