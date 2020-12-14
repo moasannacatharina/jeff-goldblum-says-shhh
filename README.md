@@ -4,7 +4,7 @@
 ## About the project
 First javascript assignment in which I've created a useless website. 
 To view, either clone the project and open it in your browser with Live Server / your localhost. 
-Or, open <a href="https://www.jeff-goldblum-says-shhh.vercel.app">this link!</a>
+Or, open <a href="https://jeff-goldblum-says-shhh.vercel.app/">this link!</a>
 
 ## Built with
 
