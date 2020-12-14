@@ -17,7 +17,7 @@ First javascript assignment in which I've created a useless website.
 ## Testers
 
 * Dante Mogrim
-*
+* Gilda Eklöf
 
 ## License
 This project is licensed under the MIT-license. Check out the LICENSE-file to read more.
