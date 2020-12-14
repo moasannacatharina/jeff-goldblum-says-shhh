@@ -16,7 +16,7 @@ First javascript assignment in which I've created a useless website.
 
 ## Testers
 
-*
+* Dante Mogrim
 *
 
 ## License
