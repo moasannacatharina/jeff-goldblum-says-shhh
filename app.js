@@ -101,11 +101,11 @@ const play = () => {
 };
 
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 700) {
-    document.body.style.backgroundColor = "#7ba5f1";
+  if (window.scrollY > 800) {
+    document.body.style.backgroundColor = "var(--button-color)";
     hiddenbtn.style.display = "block";
   } else {
-    document.body.style.backgroundColor = "var(--bg-color";
+    document.body.style.backgroundColor = "var(--bg-color)";
   }
 });
 

@@ -160,7 +160,6 @@ h2 {
   --animation-iterations: var(--iterations, 1);
   font-size: 24vw;
   animation-name: clip-text;
-  color: rgb(229, 207, 241);
   white-space: nowrap;
   cursor: default;
   margin: 1rem;
@@ -235,10 +234,14 @@ input[type="reset"] {
   animation: button-slide 5s linear infinite;
   margin: 10px;
   padding: 10px;
-  background-color: var(--button-color);
-  box-shadow: 0px 4px 1px 4px var(--button-color-darker);
+  background-color: var(--bg-color);
+  box-shadow: 0px 4px 1px 4px #09090a;
   border-radius: 50%;
   cursor: pointer;
   color: white;
   transition: 0.2s ease;
+}
+
+.hidden:hover {
+  box-shadow: 0px 1px 3px 1px #191b1a;
 }
