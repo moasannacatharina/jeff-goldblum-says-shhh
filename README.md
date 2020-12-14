@@ -18,6 +18,7 @@ First javascript assignment in which I've created a useless website.
 
 * Dante Mogrim
 * Gilda Eklöf
+* Hugo Sundberg
 
 ## License
 This project is licensed under the MIT-license. Check out the LICENSE-file to read more.
