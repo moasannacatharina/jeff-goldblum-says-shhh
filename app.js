@@ -50,6 +50,13 @@ const responses = [
 ];
 
 let textBoxOpen = false;
+const scrollToTop = () => {
+  window.scroll({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
+};
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -67,6 +74,7 @@ buttons.forEach((button) => {
     if (button.textContent === "Fine! I'll shut up") {
       textBox.innerHTML = `<h1>${responses[2]}</h1>`;
       celebrate();
+      scrollToTop();
     }
   });
 });

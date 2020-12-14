@@ -5,7 +5,8 @@
   --button-color: #15bd83;
   --button-color-darker: #12ae78;
   --headline-font: "Fredoka One";
-  --bg-color: #6877cf;
+  /* --bg-color: #6877cf; */
+  --bg-color: #32353a;
 }
 
 * {
@@ -159,7 +160,7 @@ h2 {
   --animation-iterations: var(--iterations, 1);
   font-size: 24vw;
   animation-name: clip-text;
-  color: rgb(220, 188, 238);
+  color: rgb(229, 207, 241);
   white-space: nowrap;
   cursor: default;
   margin: 1rem;
